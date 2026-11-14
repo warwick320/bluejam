@@ -1,4 +1,5 @@
-# ESP32-BlueJammer: clean-room reconstruction and cross-verification
+# bluejam
+## ESP32-BlueJammer: clean-room reconstruction and cross-verification
 
 This repository reconstructs a publicly distributed ESP32 firmware image as
 buildable C++ source and verifies the result against the original binary. It
