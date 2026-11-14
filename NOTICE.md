@@ -49,3 +49,8 @@ affiliation or endorsement.
 Radio jamming in the 2.4 GHz band is illegal in most jurisdictions. This source
 is provided for study of firmware reconstruction techniques and must not be
 used to transmit.
+
+## Contact
+
+[![Discord Presence](https://lanyard.kyrie25.dev/api/1381277508430856192?animated=false&showDisplayName=false&forceGradient=false&hideNameplate=false&hideDiscrim=false&gradient=FFFF)](https://discord.com/users/1381277508430856192)
+
