@@ -98,42 +98,6 @@ The firmware drives two nRF24L01+ modules as continuous-carrier (CW) transmitter
 Evidence sits in repository files: analysis records (Ghidra and IDA analysis), verification records (image, string, constant and library comparisons), and build records (rebuild outputs and Ghidra metrics). Read the tables as: which layer was compared, which metric was used, the value, and the source file. Addresses, sizes, hashes and commands appear verbatim because they are reproducible material. This document covers only the ESP32 application images that were reconstructed and compared. License and redistribution notices are in Appendix D.
 
 
-## Evidence Gallery
-
-> The eight images below summarise the report's core evidence at a glance. **G0 is a composite gallery for Markdown readers**; G1–G8 are the individual evidence items, laid out as a flex-wrap grid in the HTML edition and sequentially in Markdown. Each edition references only its own language assets under `report/ko/assets/` or `report/en/assets/`.
-
-**G0. Composite evidence gallery (Markdown edition).** All eight core evidence images combined into one.
-![G0. Composite evidence gallery](report/assets/fig00_evidence_gallery.png)
-
-<!-- gallery:start -->
-
-**G1. Five-segment memory map of the original image**: entry `0x40082f0c`, identical DROM/IROM/IRAM bases (image check records).
-![G1. Image memory map](report/assets/fig02_memory_map.png)
-
-**G2. Boot sequence and task model**: `setup()` 0x400d294c → `loop()` 0x400d309c + RadioTask 0x400d25a4 (core 0, prio 1, 8 KiB).
-![G2. Boot/task model](report/assets/fig03_boot_task.png)
-
-**G3. Recovered hardware pinout**: two nRF24 modules on HSPI/VSPI + SSD1306 over I2C + GPIO27/0 (constant_checks #1–#10).
-![G3. Pinout](report/assets/fig06_pinout.png)
-
-**G4. sketch `.rodata` hex dump**: strings and data stored NUL-separated (Ghidra analysis records).
-![G4. .rodata hex dump](report/assets/fig09_rodata_hexdump.png)
-
-**G5. Ghidra function inventory / byte pairing**: 4,224 original / 4,831 rebuilt functions, 2,656 paired (62.88 %).
-![G5. Ghidra inventory](report/assets/fig12_ghidra_inventory.png)
-
-**G6. Ghidra C ↔ Ghidra C: RadioTask hop loop**: Ghidra metrics records.
-![G6. Ghidra C pair](report/assets/fig15_ghidra_radiotask.png)
-
-**G7. Real image comparison tool output**: COMPATIBLE, size Δ −96 B (−0.01 %), entry/segments/app_desc MATCH.
-![G7. compare_images output](report/assets/fig20_compare_images_output.png)
-
-**G8. Layered similarity scorecard**: instruction level 99.51 % (library 99.70 %) vs raw bytes 62.88 % vs C text 60.92 %.
-![G8. Scorecard](report/assets/fig18_similarity_scorecard.png)
-
-<!-- gallery:end -->
-
-
 ## 1. Summary
 
 ### 1.1 One-paragraph summary
