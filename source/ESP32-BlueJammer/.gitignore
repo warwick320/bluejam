@@ -1,0 +1,6 @@
+# Generated from a user-supplied original BIN; not distributed.
+bitmaps.h
+banners.h
+
+# Local build output.
+build/
